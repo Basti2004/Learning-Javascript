@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          var s = '100';
+        var n;
+        var z = s * 1;
+        n = new Number( s );
+
+       // s+=1;
+       // n+=1;
+
+        console.log( '100', 100, s, n, typeof s, typeof n, typeof z  );
+
+
+        // Infinite, NaN
+        console.log( isFinite( n ),  isFinite( z ), isNaN( n ), isNaN( z )  );
+
+        // '100' * 1 => 100
+        // 'a' * 1 => NaN
+        // '' * 1 => 0
+        // Math.PI, 3.14
+        // 
+
+        console.log( isFinite( '100' ), isFinite( 'a' ), isFinite( '' ) );
+
+        console.log( isFinite( 100 / 0 ) );
+
+        // JS arbeitet Binärsystem
+        // 25 => 11001    
+        var z1 = 1.1;
+        var z2 = 0.9;
+
+        console.log( z1 * z2 ); // 0.99
+
+        var erg = z1 * z2;
+        console.log( erg.toFixed(2) ); // ACHTUNG STRING!!!
+        console.log( Math.round(erg*100)/100 );
+
+        var erg = 7;
+        console.log( erg.toFixed(2) ); // '7.00'
+
+        var runden = function( zahl, stellen ) {
+            // 1 => faktor 10
+            // 2 => faktor 100, 10 * 10
+            // 3 => faktor 1000, 10 * 10 * 10
+            var faktor = Math.pow( 10, stellen ); 
+            var erg = Math.round( zahl * faktor ) / faktor;
+            return erg;
+        }
+
+        z = 23424.982374612635435;
+        console.log( runden(z,3), runden(z,4), runden(z,0), runden(z,-3) );
+
+        // toFixed( z, 3); so geht es nicht
+        z.toFixed( 3 );
+
+
+
+    </script>
+</body>
+</html>

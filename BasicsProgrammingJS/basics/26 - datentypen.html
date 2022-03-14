@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // in Variablen Werte speichern
+        // Werte haben Datentypen
+
+        var zahl = 1; // number (beinhaltet integer UND float)
+        var komma = 13.7; // number 
+        var text = 'Hallo'; // string (Zeichenkette) '' od. "", `` (ES6, Templatestring)
+        var wahr = true; // boolean (true od. false)
+
+        // Variablen typlos!
+        zahl = 1; 
+        text = '1'; 
+        // Wert ist gleich, Typ ist anders!
+
+        // primitiven Datentypen
+
+        // Typwandlung
+        // Zahl => String
+        var z = 5; // '5'
+        var t;
+        t = z.toString(); // '5'
+        t = new String( z );
+        t = z + ''; // automatische Typumwandlung nutzen
+
+        // String => Zahl
+        t = '5';
+        z = new Number( t );
+        z = parseInt( t ); // 5
+        z = parseFloat( t ); // 5
+        t = '5.5';
+        z = parseInt( t ); // 5
+        z = parseFloat( t ); // 5.5
+        t = '5,5';
+        z = parseInt( t ); // 5
+        z = parseFloat( t ); // 5
+        t = 'Hallo Welt';
+        z = parseInt( t ); // not a number, NaN <= Zahl, die keine Zahl ist, NaN ist nie mit sich selbst gleich
+
+        t = '5';
+        z = t * 1;
+        z = t - 0;
+        z = t % 1;
+
+        // TypeScript (=Javascript mit strengeren Regeln)
+
+        t = '100px';
+        z = t * 1; // NaN
+        z = parseInt( t ); // 100
+
+        // Zahl => Boolean
+        // 1 => true
+        // 0 => false
+        // NaN => false
+        // String => Boolean
+        // 'a' => true
+        // '1' => true
+        // '' => false
+        // '0' => true
+        // 'false' => true
+        // 'NaN' => true
+        // Boolean => Zahl
+        // Boolean => String
+
+      
+
+
+    </script>
+</body>
+</html>

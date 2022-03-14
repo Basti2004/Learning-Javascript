@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ausgabe {
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <div id="ausgabe" style="color:blue;"></div>
+    <script>
+        // Ausgabe
+        alert( 'Hallo Welt' ); // alert-Fenster
+
+        // wird CSS ausgegeben
+        // document.getElementById( 'ausgabe' ).style.color = 'red';
+
+        console.log( 'Hallo Welt' ); // besser als alert!!
+        console.info( 'Info' );
+        console.warn( 'Achtung' );
+        console.error( 'FEHLER' );
+
+        var z1 = 1;
+        var t = 'Hello';
+
+        console.log( 'hier kommen Variablen', z1, t );
+
+        document.getElementById( 'ausgabe' ).innerHTML = 'Hallo Welt';
+        // innerText, braucht man aber nicht...
+        // wird CSS ausgegeben
+        document.getElementById( 'ausgabe' ).style.color = 'red';
+
+        // NIE (böse!)
+        //document.write( 'Hallo Welt' );
+
+    </script>
+</body>
+</html>

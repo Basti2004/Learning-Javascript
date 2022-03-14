@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var zahl1 = 5;
+        var zahl2 = 7;
+
+        var zahl3 = 5 + 7;  // 12
+        // Rechenoperatoren: +, -, *, /, % (Modulo)
+
+        var zahl4 = zahl3 - 8; // 4
+        //zahl1 + zahl2 = zahl3;
+        zahl3 = zahl1 + zahl2;
+        zahl3 = zahl3 * zahl1; // 60
+        zahl3 = 13 / 5; // 2.6
+        zahl3 = 13 % 5; // 3
+
+        // Verändern eines Wertes
+        zahl1 = zahl1 + 1;
+        zahl1 += 1; // -=, *=, /=
+        zahl1++; // Achtung es gibt auch ++zahl1;
+        
+        zahl3 = 10;
+        zahl3++; // 11
+        alert( ++zahl3 );
+        //12
+
+        // Verkettungsoperator bei String "+"
+        var t1 = 'Hallo';
+        var t2 = 'Welt';
+        alert( t1 + ' ' + t2 );
+
+        var z1 = 5;
+        var t3 = '6';
+        alert( z1 + t3 ); // automatische Typumwandlung, sobald ein Operand string ist, werden alle zu strings => z1 wird '5'
+
+        alert( 'Ergebnis:' + (z1 + 1) ); 
+
+
+    </script>
+</body>
+</html>

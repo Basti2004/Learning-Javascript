@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Klick mich</button>
+    <script>
+        // Funktionen
+        // abgeschlossener Programmteil
+
+        // wichtig, wenn Teile mehrmals gebraucht werden
+
+        // vordefinierte Funktionen im JS 
+
+        // eigene Funktionen, selbstdefiniert
+        /* function meineFunktion() {
+
+        } */
+
+        var x; // globale Variable, gilt überall!!!
+        x = 1;
+
+        var meineFunktion = function() {
+            // Programm abgeschlossen
+            // Programm läuft nicht von selbst! Es muss gestartet werden
+            var x, y, z; // Variablen gelten NUR in der Funktion
+            // lokale Variablen
+            x = 100;
+
+            alert( 'jetzt läufts....')
+            alert( x );
+ 
+
+        }  // Programmende  
+
+        var meinX, meinY;
+        meinX = 1;
+        meinY = function() {
+            
+        }
+
+        /*
+        const f = function() {
+
+        }
+
+        f = 5;
+        */
+
+        meineFunktion(); // Funktionsaufruf == Start des Programm
+        //meineFunktion();
+        //meineFunktion();
+        alert( x );
+
+       console.log( meineFunktion ); // startet nicht
+
+        document.getElementById( 'btn' ).onclick = function() {
+            meineFunktion();
+        }
+
+        document.getElementById( 'btn' ).onclick = meineFunktion;
+        // ACHTUNG keine () !!!!
+
+        /* Kontrollstrukturen keine Funktionen 
+        if( )
+        for ( )
+        while ( ) 
+        */
+
+    </script>
+</body>
+</html>

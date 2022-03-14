@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <ul id="liste">
+        <li id="p1" class="test">Punkt 1</li>
+        <li id="p2" class="test">Punkt 2</li>
+        <li id="p3">Punkt 3</li>
+    </ul>
+    <script>
+
+    var element = document.getElementById( 'p1' ); // EIN Element/Objekt
+
+    var punkte = document.getElementsByTagName( 'li' ); // Array mit Objekten
+    
+    //punkte.onclick = function() {} // geht nicht!!!!
+    
+    console.log( punkte[0] ); // <li id="p1">
+    var i;
+    for( i=0; i<punkte.length; i++) {
+    //for (i in punkte ) {
+        //punkte[i].style.color = 'red'; 
+        punkte[i].onclick = function() {
+            //alert( 'geklickt' );
+            //alert( i );
+            //punkte[i].style.color = 'red'; 
+            //this.style.color = 'red'; // Element auf das geklickt wurde ==> this
+            this.classList.toggle( 'highlight' );
+        }
+    }
+
+    var punkte = document.getElementsByClassName( 'test'); // Array mit Objekten
+
+    var punkte = document.querySelectorAll( '#liste li.test' );
+    // mit einem CSS-Selektor Elemente auswählen, Ergebnis ist Array
+    // li:nth-child(2n)
+
+    var body = document.querySelectorAll( 'body' );
+    console.log( body[0] );
+
+
+
+
+    </script>
+</body>
+</html>

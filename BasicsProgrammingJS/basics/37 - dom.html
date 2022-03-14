@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    DOM - Manipulation
+    <div id="ausgabe" class="rot wichtig"></div>
+
+    <script>
+        // können HTML Code als String schreiben und mit innerHTML in den DOM einfügen (siehe ueb12), fehleranfällig
+
+        // besser: mit Objekten arbeiten
+        // HTML-Tag ist ein Objekt/Ding/HTMLNodeElement
+
+        // bestehende Elemente verändern
+        var div = document.getElementById( 'ausgabe' ); 
+        div.innerHTML = 'neuer Inhalt';
+        div.style.color = 'red';
+        div.classList.add( 'fett' );
+        div.onclick = function() {
+        }
+
+        // neue Elemente erzeugen
+        var p = document.createElement( 'p' ); // <p></p>
+        p.innerHTML = 'Hallo Welt!';
+        p.id = 'absatz';
+
+        //div.innerHTML = p; // geht nicht!
+
+        // WICHTIG in den DOM einhängen
+
+       // console.log( div, p );
+
+        //div.innerHTML = ''; macht es leer
+        div.appendChild( p ); // im DOM <div> wird ein childNode angehängt
+
+            p = document.createElement( 'p' );
+            p.innerHTML = 'neues P';
+            div.appendChild( p );
+       
+        //document.getElementById( 'absatz' ).style.color = 'green';
+        p.style.color = 'green';
+
+       // console.log( p );
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

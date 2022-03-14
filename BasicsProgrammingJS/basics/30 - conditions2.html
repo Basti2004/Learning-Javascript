@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="zahl">
+    <button id="btn">Check</button>
+    <script>
+        document.getElementById( 'btn' ).onclick = function() {
+            var z = document.getElementById( 'zahl' ).value * 1;
+
+            // Bedingung mit bedingten Codeblock
+            if ( z > 100 ) {
+                console.log( 'groß' );
+            } else {
+                console.log( 'Zahl ist nicht groß ODER auch gar keine Zahl' );
+            }
+
+
+            if ( z > 100 ) {
+                console.log( 'groß' );
+            } else if ( z < 100 ) {
+                console.log( 'klein' );
+            } else {
+                console.log( 'keine Zahl ODER 100')
+            }
+
+            // Logikoperatoren
+            // UND && ... beide Bedingungen müssen erfüllt werden
+            // ODER || ... eine der beiden muss erfüllt werden
+            // NICHT !
+
+            if ( z > 0 && z < 100 ) {
+                console.log( '1-99' );
+            }
+
+            if ( z > 0 || z < 100 ) {
+                console.log( 'jede Zahl' );
+            }
+
+            if ( ( z > 0 && z < 100 ) || z > 1000 ) {
+                console.log( '1-99, >1000' );
+            }
+
+            // zwischenspeichern
+            var bErgebnis;
+            bErgebnis = z > 0 && z < 100; // true od. false
+
+            if ( bErgebnis ) {
+                //..
+            }
+
+            if ( bErgebnis == true ) {
+
+            }
+
+            if ( bErgebnis == false ) {
+
+            }
+
+            if ( !bErgebnis ) {
+
+            }
+
+            var bTest;
+
+            bTest = true;
+
+            if ( bTest ) {
+
+            }
+
+            switch( z ) {
+                case 1: 
+                    console.log( '1' );
+                    break;
+                case 2:
+                    console.log( '2' );  
+                    // nicht vergessen "Fall" mit break beenden  
+                case 3: 
+                    console.log( '3' );
+                    break;
+                case 4:
+                case 5:
+                    console.log( '4 und 5' );
+                    break;
+                default:  // wie else
+                    console.log( 'andere...');                
+            }
+
+            // geht nicht!
+            if ( z == 4 || 5 ) {
+                console.log( 'kommt immer...' );
+            }
+
+            // bedingte Zuweisung mit dem ternären Operator
+            var farbe;
+            if ( z > 100 ) {
+                farbe = 'grün';
+            } else {
+                farbe = 'rot';
+            }
+
+            //kurz
+            farbe = z > 100 ? 'grün' : 'rot';
+
+            farbe = z > 100 ? 'grün' : (z < 100 ? 'blau' : 'rot');
+
+        }
+    </script>
+</body>
+</html>

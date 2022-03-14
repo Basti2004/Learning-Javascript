@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #absatz {
+            font:24px Arial;
+        }
+        body {
+            background:red;
+        }
+    </style>
+    <script>
+        // einzeilige Kommentare
+        /* oder so */
+        /* <script> im head oder body verwenden */
+        /* wird als erstes ausgeführt, weil oben */   
+        window.onload = function() { // wenn Seiteninhalt vollständig geladen wurde dann...
+            document.getElementById( 'absatz' ).onclick = function() {
+                document.getElementById( 'absatz' ).style.color = 'red';
+            }; 
+        };
+
+        alert( 'Hallo Welt' ); // Befehl, Ausdruck, Statement - Ende ";"
+        
+
+    </script>
+    <script src="24 - script.js">
+        /* der Inhalt des Script-Blockes kommt aus der externen Datei!!!! Alles was ich hier reinschreibe, wird überschrieben */
+        alert( '4' );
+    </script>
+</head>
+<body>
+    <p id="absatz" onclick="/*Inline Script böse*/">Hallo Welt</p>
+    <style>
+        body {
+           background:#ddd;
+        }
+    </style>
+    <script>
+        /* wird später ausgeführt, weil unten */
+        /*
+        window.document.getElementById( 'absatz' ).onclick = function() {
+            document.getElementById( 'absatz' ).style.color = 'red';
+        } 
+        */
+       window.alert( '2' );
+    </script>
+</body>
+</html>

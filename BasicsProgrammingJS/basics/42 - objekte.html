@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="ausgabe"></div>
+    <script>
+// Objekt => ein Speicher für Daten
+var obj;
+obj = new Object(); // new Array()
+obj = {}; // Objektliteral
+
+obj.z1 = 5; // 'z1' ist eine Eigenschaft/Attribut (property)
+obj.z2 = 6;
+console.log( obj );
+
+var z1 = 5, z2 = 6;
+console.log( z1, obj.z1 );
+// console.log( z3 ); // Error not defined
+console.log( obj.z3 ); // alle Attribute sind undefined
+var summe =  obj.z1 + obj.zahl2; 
+//console.log( summe );
+
+obj.text = 'Hallo Welt';
+obj.check = true;
+//obj.zahlen = [];
+
+var zahlen;
+zahlen = []; // assoziativen Array
+zahlen['z1'] = 5;
+zahlen['z2'] = 6;
+
+// JS Objekt === assoziativer Array und umgekehrt!
+console.log( obj.z1, zahlen['z1'] );
+console.log( obj['z1'], zahlen.z1 );
+
+var welcheZahl = 'z2';
+console.log( obj.welcheZahl ); // undefined
+console.log( obj[ welcheZahl ] ); // 6
+
+var person = {
+    vorname:'Max',
+    nachname:'Muster',
+    gebdatum:[1,1,1980],
+    'e-mail':'max@muster.com'
+};
+
+//person['e-mail']
+var div = document.getElementById('ausgabe');
+div.style['background-color'] = 'red';
+div.style.backgroundColor = 'red'; // nicht bei eigenen Props
+
+/*div.style = {
+    'background-color':'red',
+    border:'2px solid #000',
+    minHeight:'2em'
+};  so geht es nicht, ABER...  */
+
+var meinFormat = {
+    'background-color':'red',
+    border:'2px solid #000',
+    minHeight:'2em'
+};
+for ( var i in meinFormat ) { // alle Werte aus dem Objekt
+    console.log( meinFormat[i] );
+    div.style[i] = meinFormat[i];
+}
+
+for ( var j in div ) {
+    console.log( j );
+}
+
+div.onclick = function() {}
+div['onclick'] = function() {}
+
+// Methoden = Funktion in einem Objekt
+obj.sum = function() {
+    return obj.z1 + obj.z2;
+}
+
+/*
+person.name = function() {
+    return person.vorname + ' ' + person.nachname;
+}
+*/
+
+person.name = function() {
+    return this.vorname + ' ' + this.nachname;
+}
+
+console.log( person.vorname, person.name() );
+
+var x = {
+    z : 5,
+    multi : function(f) {
+        return this.z * f;
+    }
+}
+
+
+    </script>
+</body>
+</html>

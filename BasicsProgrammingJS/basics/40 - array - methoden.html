@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Array - Methoden</h1>
+    <script>
+    var zahlen = [3,2,1,12,434,2,3,3,34,1];
+   
+    
+    // Länge
+    zahlen.length; // Anzahl der Elemente, keine Methode 
+
+    // hinzufügen
+    zahlen.push( 3 );
+    console.log( zahlen );
+
+    // löschen
+    //delete zahlen[1]; // undefined
+    var entfernt = zahlen.splice(1,1); // an Index 1 entferne ein Element
+    console.log( zahlen, entfernt );
+
+    // gibt es?
+    var gibtes = zahlen.indexOf( 13 ); // suche 12 im Array, liefert Position/Index
+    console.log( gibtes ); // nicht gefunden, liefert -1
+
+    var wo = zahlen.indexOf( 7 );
+    if ( wo > -1 ) {
+        zahlen.splice( wo, 1 );
+    }
+    console.log( zahlen );
+
+    // Aufgabe alle 3 entfernen
+    /*for ( var i = 0; i<zahlen.length; i++ ) {
+        if ( zahlen[i] == 3 ) {
+            zahlen.splice(i,1);
+            i--;
+        }
+    }*/
+    while( zahlen.indexOf( 3 ) != -1 ) {
+        zahlen.splice( zahlen.indexOf( 3 ), 1 );
+    }
+    console.log( 'ohne 3', zahlen );
+
+    // sortieren
+    zahlen.sort( /*sortierFunktion*/ function(a,b) {
+        if ( a > b ) { // aufsteigend >, absteigend <
+            return 1;
+        } else {
+            return -1;
+        }
+    } );
+
+    zahlen.sort( function(a,b) {
+        return a > b ? 1 : -1;
+    });
+
+    zahlen.sort( function(a,b){ return a-b; })
+
+    console.log( zahlen );
+
+    </script>
+</body>
+</html>

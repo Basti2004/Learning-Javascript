@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Aufgabe Zahlen addieren
+        var z1, z2, sum;
+        // Arten von Funktionen
+        
+        var f1 = function() {
+            // tut was
+            sum = z1 + z2;
+            // Ende            
+        }
+
+        z1 = 5;
+        z2 = 7;
+        f1();
+        alert( sum );
+
+
+        // Beim Aufruf der Funktion etwas mitteilen
+        var f2 = function(p1, p2 ) { // Paramater, Anzahl beliebig
+            // Parameter sind wie lokale Variablen
+            // var p1, p2;
+            // Werte werden beim Aufruf der Funktion bestimmt
+            sum = p1 + p2;
+        }
+
+        z1 = 5;
+        z2 = 7;
+        f2(z1, z2); // 5, 7
+        alert( sum );
+
+        f2( z1, 12 );
+        alert( sum );
+
+        var z3 = 6, z4 = 8;
+        f2( z3, z4 );
+        alert( sum );
+
+        // Funktion liefert Ergebnis
+        var f3 = function( p1, p2 ) {
+            var ergebnis; // lokal!!
+            ergebnis = p1 + p2;
+            return ergebnis; // Rückgabewert, wichtig danach ist Funktion zu Ende
+            //p1 = 0;
+        }
+
+        z1 = 5;
+        z2 = 7;
+        sum = f3(z1, z2);
+        alert( sum );
+
+        z4 = f3(z3,2); // 6, 2 => 8
+        z1 = f3(z1, z4); // 5, 8 => 13
+        alert( z1 );
+
+
+
+        
+
+    </script>
+</body>
+</html>

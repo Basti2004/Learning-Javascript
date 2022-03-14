@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="monate">
+        <option value="">bitte wählen...</option>
+    </select>
+    <ul id="liste"></ul>
+    <script>
+        // Array
+        var z1, z2, z3;
+        z1 = 10;
+        z2 = 20;
+        z3 = 25;
+
+        // ARRAY = Datenspeicher für skalare Werte
+        // es sollen mehrere Werte gespeichert werden
+
+        var zahlen;
+        zahlen = new Array(); // erzeuge neuen Array
+        zahlen = []; 
+
+        zahlen = [10,20,25];
+
+        // über Index, jeder Wert hat einen Index
+        // 1. Wert steht an der Stelle 0, Index 0
+
+        zahlen[0] = 10; // 'text', 1, true, []
+        zahlen[1] = 20;
+        zahlen[2] = 25; 
+        
+        var pos = 3;
+        //zahlen[ pos ] = 100;
+
+        //zahlen[10] = 100;
+        console.log( zahlen.length ); // Anzahl der Elemente im Array
+        //zahlen[ zahlen.length ] = 100;
+        
+        // Array-Methode
+        zahlen.push( 100 ); // fügs hinten dran
+
+        zahlen[5] = ['a','b','c'];
+
+        console.log( zahlen );
+        console.log( 'ein Wert', zahlen[2] );
+
+        console.log( 'verschachtelter Array', zahlen[5][1] );
+
+        var monate = ['Jänner', 'Februar', 'März', 'April', '...' ];
+        var welchesMonat = 3;
+        monate[5] = '';
+        console.log( monate[ welchesMonat-1 ], monate[4], monate[5] );
+        console.log( typeof monate[5], typeof monate[6], typeof monate )
+
+        var bilder = [ 
+            'bild1.jpg', 
+            'images/wuerfel2.png', 
+            'DSC0072.jpg' 
+        ];
+
+        // !!!!!!
+        var i;
+        //for ( i = 0; i <= monate.length -1 ; i++ ) {
+        for ( i = 0; i < monate.length; i++ ) {
+            var opt = document.createElement( 'option' );
+            opt.innerHTML = monate[i];
+            opt.value = i+1; // damit zB März wieder 3 ist, nicht 2
+            //opt.value = monate[i];
+            document.getElementById( 'monate' ).appendChild( opt );
+        }
+       
+
+        // andere Möglichkeit mit for-in
+        for ( i in bilder ) { // laufen den Array von Anfang bis Ende durch, i ist der Index
+            var item = document.createElement( 'li' );
+            item.innerHTML = i + ': ' + bilder[ i ];
+            document.getElementById( 'liste' ).appendChild( item );
+        }
+
+        // for-of
+        for ( i of bilder ) { // laufen den Array von Anfang bis Ende durch, i ist der Wert
+            var item = document.createElement( 'li' );
+            item.innerHTML = i; // i ist schon der Wert!!! nicht der Index
+            document.getElementById( 'liste' ).appendChild( item );
+        }
+
+        // assioziativer Array, Dictionary
+        var person = [ 'Max', 'Muster', 1, 1, 1980, 85, 185];
+        // Gewicht person[5]
+
+        person = [];
+        person['vorname'] = 'Max'; // NICHT Index 0!!!
+        person['nachname'] = 'Muster';
+        //person['gebtag'] = [1,1,1980];
+        person['gebtag'] = [];
+        person['gebtag']['jahr'] = 1980;
+        person['gewicht'] = 85;
+
+        // nur for-in od. for-of
+        for ( i in person ) {
+            console.log( i, person[i] );
+        }
+
+        console.log( person['gebtag'][2] );
+
+    </script>
+</body>
+</html>

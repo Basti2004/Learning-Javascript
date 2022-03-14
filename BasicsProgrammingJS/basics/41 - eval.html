@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // eval ist böse
+        //"use strict";
+
+        var z1, z2;
+        z1 = 5;
+        z2 = 6;
+        var sum;
+
+        eval( 'sum = z1 + z2;' );
+
+        alert( sum );
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS Kommentar */
+    </style>
+</head>
+<body>
+    VSC: STRG + #
+
+
+    <!-- HTML Kommentar -->
+    <script>
+    
+    // einzeiliges Kommentar
+
+    /*
+    mehrzeiliges Kommentar
+    */
+
+    //#region NAME
+
+        // Code innerhalb einer Region
+
+    //#endregion
+
+    /**
+     * rundet Zahlen auf beliebige Stellen genau
+     * @param zahl {number}
+     * @param stellen {number}
+     * @return {number}
+     * */
+    var runden = function( zahl, stellen ) {
+        var faktor = Math.pow( 10, stellen ); 
+        var erg = Math.round( zahl * faktor ) / faktor;
+        return erg;
+    }
+  
+    // JSDoc Infos zum Code dokumentieren
+
+    runden()
+
+
+    </script>
+</body>
+</html>
